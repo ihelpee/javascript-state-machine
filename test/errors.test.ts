@@ -11,7 +11,7 @@ test('state cannot be modified directly', () => {
   expect(fsm.state).toBe('none');
   try {
     fsm.state = 'other';
-  } catch (e) {
+  } catch (e: any) {
     expect(e.message).toBe('use transitions to change state');
   }
   expect(fsm.state).toBe('none');
@@ -27,19 +27,19 @@ test('StateMachine.apply only allowed on objects', () => {
 
   try {
     StateMachine.apply(function() {}, config)
-  } catch (e) {
+  } catch (e: any) {
     expect(e.message).toBe('StateMachine can only be applied to objects');
   }
 
   try {
     StateMachine.apply([], config)
-  } catch (e) {
+  } catch (e: any) {
     expect(e.message).toBe('StateMachine can only be applied to objects');
   }
 
   try {
     StateMachine.apply(42, config)
-  } catch (e) {
+  } catch (e: any) {
     expect(e.message).toBe('StateMachine can only be applied to objects');
   }
 
@@ -60,7 +60,7 @@ test('invalid transition raises an exception', () => {
 
   try {
     fsm.step2();
-  } catch (e) {
+  } catch (e: any) {
     expect(e.message).toBe('transition is invalid in current state');
     expect(e.transition).toBe('step2');
     expect(e.from).toBe('none');
@@ -110,7 +110,7 @@ test('fire transition while existing transition is still in process raises an ex
 
   try {
     fsm.step()
-  } catch (e) {
+  } catch (e: any) {
     expect(e.message).toBe('transition is invalid while previous transition is still in progress');
     expect(e.transition).toBe('other');
     expect(e.from).toBe('none');
@@ -120,7 +120,7 @@ test('fire transition while existing transition is still in process raises an ex
 
   try {
     expect(fsm.state).toBe('none');
-  } catch (e) {
+  } catch (e: any) {
     throw new Error('entire transition was cancelled by the exception')
   }
 });

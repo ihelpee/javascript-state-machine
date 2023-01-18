@@ -21,12 +21,12 @@ test('is', () => {
   expect(fsm.is('yellow')).toBe(false);
   try {
     expect(fsm.is(['green', 'red'])).toBe(true);
-  } catch (e) {
+  } catch (e: any) {
     throw new Error('current state should match when included in array')
   }
   try {
     expect(fsm.is(['yellow', 'red'])).toBe(false);
-  } catch (e) {
+  } catch (e: any) {
     throw new Error('current state should NOT match when not included in array')
   }
 
@@ -37,12 +37,12 @@ test('is', () => {
   expect(fsm.is('yellow')).toBe(true);
   try {
     expect(fsm.is(['green', 'red'])).toBe(false);
-  } catch (e) {
+  } catch (e: any) {
     throw new Error('current state should NOT match when not included in array')
   }
   try {
     expect(fsm.is(['yellow', 'red'])).toBe(true);
-  } catch (e) {
+  } catch (e: any) {
     throw new Error('current state should match when included in array')
   }
 });
@@ -86,12 +86,12 @@ test('can & cannot', () => {
 
   try {
     expect(fsm.can('jibber')).toBe(false);
-  } catch (e) {
+  } catch (e: any) {
     throw new Error('unknown event should not crash');
   }
   try {
     expect(fsm.cannot('jabber')).toBe(true);
-  } catch (e) {
+  } catch (e: any) {
     throw new Error('unknown event should not crash');
   }
 });

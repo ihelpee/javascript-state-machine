@@ -204,7 +204,7 @@ test('history back and forward', () => {
 
   try {
     fsm.historyBack()
-  } catch (e) {
+  } catch (e: any) {
     expect(e.message).toBe('no history')
   }
 
@@ -262,7 +262,7 @@ test('history back and forward', () => {
 
   try {
     fsm.historyForward()
-  } catch (e) {
+  } catch (e: any) {
     expect(e.message).toBe('no history');
   }
 

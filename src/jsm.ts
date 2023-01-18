@@ -287,8 +287,8 @@ class JSM implements IFsm {
 
       // Execute the observer
       if (eventName) {
-        // const result = observer[eventName].apply(observer, args);
-        const result = observer[eventName](...args);
+        const result = observer[eventName].apply(observer, args);
+        // const result = observer[eventName](...args);
 
         if (result && typeof result.then === 'function') {
           // result is a Promise

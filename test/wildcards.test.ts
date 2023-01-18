@@ -19,7 +19,7 @@ test('wildcard :from allows transition from any state', () => {
 
   try {
     expect(fsm.state).toBe('stopped');
-  } catch (e) {
+  } catch (e: any) {
     throw new Error('initial state should be stopped');
   }
 
@@ -38,25 +38,25 @@ test('wildcard :from allows transition from any state', () => {
 
   try {
     expect(fsm.transitions()).toEqual(["prepare", "stop"]);
-  } catch (e) {
+  } catch (e: any) {
     throw new Error('ensure wildcard transition (stop) is included in available transitions');
   }
   fsm.prepare();
   try {
     expect(fsm.transitions()).toEqual(["start", "stop"]);
-  } catch (e) {
+  } catch (e: any) {
     throw new Error('ensure wildcard transition (stop) is included in available transitions');
   }
   fsm.start();
   try {
     expect(fsm.transitions()).toEqual(["pause", "stop"]);
-  } catch (e) {
+  } catch (e: any) {
     throw new Error('ensure wildcard transition (stop) is included in available transitions');
   }
   fsm.stop();
   try {
     expect(fsm.transitions()).toEqual(["prepare", "stop"]);
-  } catch (e) {
+  } catch (e: any) {
     throw new Error('ensure wildcard transition (stop) is included in available transitions');
   }
 });
@@ -77,7 +77,7 @@ test('missing :from allows transition from any state', () => {
 
   try {
     expect(fsm.state).toBe('stopped');
-  } catch (e) {
+  } catch (e: any) {
     throw new Error('initial state should be stopped');
   }
 
@@ -95,25 +95,25 @@ test('missing :from allows transition from any state', () => {
 
   try {
     expect(fsm.transitions()).toEqual(["prepare", "stop"]);
-  } catch (e) {
+  } catch (e: any) {
     throw new Error('ensure wildcard transition (stop) is included in available transitions');
   }
   fsm.prepare();
   try {
     expect(fsm.transitions()).toEqual(["start", "stop"]);
-  } catch (e) {
+  } catch (e: any) {
     throw new Error('ensure wildcard transition (stop) is included in available transitions');
   }
   fsm.start();
   try {
     expect(fsm.transitions()).toEqual(["pause", "stop"]);
-  } catch (e) {
+  } catch (e: any) {
     throw new Error('ensure wildcard transition (stop) is included in available transitions');
   }
   fsm.stop();
   try {
     expect(fsm.transitions()).toEqual(["prepare", "stop"]);
-  } catch (e) {
+  } catch (e: any) {
     throw new Error('ensure wildcard transition (stop) is included in available transitions');
   }
 

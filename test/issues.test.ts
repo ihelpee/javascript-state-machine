@@ -16,12 +16,12 @@ test('github issue #12 - transition return values', () => {
 
   try {
     expect(fsm.init()).toBe(true);
-  } catch (e) {
+  } catch (e: any) {
     throw new Error('successful (synchronous) transition returns true')
   }
   try {
     expect(fsm.cancelled()).toBe(false);
-  } catch (e) {
+  } catch (e: any) {
     throw new Error('cancelled (synchronous) transition returns true');
   }
 
@@ -48,7 +48,7 @@ test('github issue #17 - exceptions in lifecycle events are NOT swallowed', () =
 
   try {
     fsm.step();
-  } catch (e) {
+  } catch (e: any) {
     expect(e.message).toBe('oops');
   }
 });

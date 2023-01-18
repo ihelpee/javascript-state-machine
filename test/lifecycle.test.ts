@@ -611,7 +611,7 @@ test('transition cannot fire while lifecycle event is in progress', () => {
         expect(this.can('other')).toBe(false);
         try {
           fsm.other();
-        } catch (e) {
+        } catch (e: any) {
           expect(e.message).toBe('transition is invalid while previous transition is still in progress');
           expect(e.transition).toBe('other');
           expect(e.from).toBe('A');
@@ -625,7 +625,7 @@ test('transition cannot fire while lifecycle event is in progress', () => {
         expect(this.can('other')).toBe(false);
         try {
           fsm.other();
-        } catch (e) {
+        } catch (e: any) {
           expect(e.message).toBe('transition is invalid while previous transition is still in progress');
           expect(e.transition).toBe('other');
           expect(e.from).toBe('B');
@@ -674,7 +674,7 @@ test('transition cannot fire while asynchronous lifecycle event is in progress',
             expect(this.can('other')).toBe(false);
             try {
               fsm.other();
-            } catch (e) {
+            } catch (e: any) {
               expect(e.message).toBe('transition is invalid while previous transition is still in progress');
               expect(e.transition).toBe('other');
               expect(e.from).toBe('A');
@@ -694,7 +694,7 @@ test('transition cannot fire while asynchronous lifecycle event is in progress',
             expect(this.can('other')).toBe(false);
             try {
               fsm.other();
-            } catch (e) {
+            } catch (e: any) {
               expect(e.message).toBe('transition is invalid while previous transition is still in progress');
               expect(e.transition).toBe('other');
               expect(e.from).toBe('B');
