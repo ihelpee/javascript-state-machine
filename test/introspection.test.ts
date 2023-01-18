@@ -1,7 +1,7 @@
 //introspection.test.ts
 /// <reference types="jest" />
 import StateMachine from '../src/app/app';
-import {IStateMachine} from "../dist/app/app.types";
+import {IStateMachine} from '../dist';
 
 test('is', () => {
 
