@@ -34,7 +34,7 @@
   ],
   "types": "dist/index.d.ts",
   "directories": {},
-  "version": "1.0.1",
+  "version": "1.0.2",
   "scripts": {
     "build": "rimraf dist && rollup -c",
     "build:prod": "rimraf dist && rollup -c --environment mode:production",
